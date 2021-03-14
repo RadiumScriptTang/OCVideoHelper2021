@@ -1,0 +1,37 @@
+{
+  "name": "Canvas Video Helper",
+  "description" : "Canvas Video Helper",
+  "version": "1.2",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "Radium.png"
+  },
+
+  "icons": {
+    "16": "Radium.png",
+    "48": "Radium.png",
+    "128": "Radium.png"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "Opens popup.html"
+    }
+  },
+
+  "homepage_url": "http://www.fgb2019.top",
+
+  "content_scripts": [
+    {
+      "matches": ["https://courses.sjtu.edu.cn/*","http://courses.sjtu.edu.cn/*"],
+      "js": ["video_control.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "permissions": [  "tabs"]
+}
